@@ -9,3 +9,6 @@ C:\Users\usd33129\Documents\Visual Studio 2013\Projects\CSHP 811 Wi16\CSHP811A A
 C:\Users\usd33129\Documents\Visual Studio 2013\Projects\CSHP 811 Wi16\CSHP811A Assignment 02\CSHP811A Assignment 02\obj\Debug\CSHP811A Assignment 02.pdb
 C:\Users\usd33129\Documents\Visual Studio 2013\Projects\CSHP 811 Wi16\CSHP811A Assignment 02\CSHP811A Assignment 02\bin\Debug\CalculatorOperations.dll
 C:\Users\usd33129\Documents\Visual Studio 2013\Projects\CSHP 811 Wi16\CSHP811A Assignment 02\CSHP811A Assignment 02\bin\Debug\CalculatorOperations.pdb
+C:\Users\usd33129\Documents\GitHub\CSharpClass\CSHP 811 Wi16\CSHP811A Assignment 02\CSHP811A Assignment 02\bin\Debug\CSHP811A Assignment 02.exe.config
+C:\Users\usd33129\Documents\GitHub\CSharpClass\CSHP 811 Wi16\CSHP811A Assignment 02\CSHP811A Assignment 02\obj\Debug\CSHP811A Assignment 02.exe
+C:\Users\usd33129\Documents\GitHub\CSharpClass\CSHP 811 Wi16\CSHP811A Assignment 02\CSHP811A Assignment 02\obj\Debug\CSHP811A Assignment 02.pdb
