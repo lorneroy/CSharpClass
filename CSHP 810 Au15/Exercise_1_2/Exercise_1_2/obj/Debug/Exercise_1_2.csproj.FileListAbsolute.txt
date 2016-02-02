@@ -1,0 +1,7 @@
+C:\Users\usd33129\Documents\Visual Studio 2013\Projects\CSHP 810 Au15\Exercise_1_2\Exercise_1_2\bin\Debug\Exercise_1_2.exe.config
+C:\Users\usd33129\Documents\Visual Studio 2013\Projects\CSHP 810 Au15\Exercise_1_2\Exercise_1_2\bin\Debug\Exercise_1_2.exe
+C:\Users\usd33129\Documents\Visual Studio 2013\Projects\CSHP 810 Au15\Exercise_1_2\Exercise_1_2\bin\Debug\Exercise_1_2.pdb
+C:\Users\usd33129\Documents\Visual Studio 2013\Projects\CSHP 810 Au15\Exercise_1_2\Exercise_1_2\obj\Debug\Exercise_1_2.exe
+C:\Users\usd33129\Documents\Visual Studio 2013\Projects\CSHP 810 Au15\Exercise_1_2\Exercise_1_2\obj\Debug\Exercise_1_2.pdb
+C:\Users\usd33129\Documents\Visual Studio 2013\Projects\CSHP 810 Au15\exercise_1_2\Exercise_1_2\bin\Debug\Exercise_1_2.exe.CodeAnalysisLog.xml
+C:\Users\usd33129\Documents\Visual Studio 2013\Projects\CSHP 810 Au15\exercise_1_2\Exercise_1_2\bin\Debug\Exercise_1_2.exe.lastcodeanalysissucceeded

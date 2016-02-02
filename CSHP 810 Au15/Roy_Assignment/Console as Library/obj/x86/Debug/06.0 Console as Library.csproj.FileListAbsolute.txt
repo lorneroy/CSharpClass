@@ -1,0 +1,22 @@
+C:\Course Material\UW\Courses\Intro to C#\Lectures\Lecture 05 - LINQ\Exercise 05\05.4 Exceptions Publiced\bin\Debug\06.0 Console as Library.exe
+C:\Course Material\UW\Courses\Intro to C#\Lectures\Lecture 05 - LINQ\Exercise 05\05.4 Exceptions Publiced\bin\Debug\06.0 Console as Library.pdb
+C:\Course Material\UW\Courses\Intro to C#\Lectures\Lecture 05 - LINQ\Exercise 05\05.4 Exceptions Publiced\bin\Debug\nunit.framework.dll
+C:\Course Material\UW\Courses\Intro to C#\Lectures\Lecture 05 - LINQ\Exercise 05\05.4 Exceptions Publiced\bin\Debug\nunit.framework.xml
+C:\Course Material\UW\Courses\Intro to C#\Lectures\Lecture 05 - LINQ\Exercise 05\05.4 Exceptions Publiced\obj\x86\Debug\06.0 Console as Library.exe
+C:\Course Material\UW\Courses\Intro to C#\Lectures\Lecture 05 - LINQ\Exercise 05\05.4 Exceptions Publiced\obj\x86\Debug\06.0 Console as Library.pdb
+C:\Course Material\UW\Courses\Intro to C#\Lectures\Lecture 05 - LINQ\Exercise 05\06.0 Console as Library\bin\Debug\06.0 Console as Library.exe
+C:\Course Material\UW\Courses\Intro to C#\Lectures\Lecture 05 - LINQ\Exercise 05\06.0 Console as Library\bin\Debug\06.0 Console as Library.pdb
+C:\Course Material\UW\Courses\Intro to C#\Lectures\Lecture 05 - LINQ\Exercise 05\06.0 Console as Library\bin\Debug\nunit.framework.dll
+C:\Course Material\UW\Courses\Intro to C#\Lectures\Lecture 05 - LINQ\Exercise 05\06.0 Console as Library\bin\Debug\nunit.framework.xml
+C:\Course Material\UW\Courses\Intro to C#\Lectures\Lecture 05 - LINQ\Exercise 05\06.0 Console as Library\obj\x86\Debug\06.0 Console as Library.exe
+C:\Course Material\UW\Courses\Intro to C#\Lectures\Lecture 05 - LINQ\Exercise 05\06.0 Console as Library\obj\x86\Debug\06.0 Console as Library.pdb
+C:\Course Material\UW\Courses\Intro to C#\Lectures\Lecture 05 - LINQ\Exercise 05\06.0 Console As Library\obj\x86\Debug\06.0 Console As Library.csprojResolveAssemblyReference.cache
+C:\Course Material\UW\Courses\Intro to C#\Lectures\Lecture 05 - LINQ and Collections\Exercise 05\06.0 Console As Library\obj\x86\Debug\06.0 Console As Library.exe
+C:\Course Material\UW\Courses\Intro to C#\Lectures\Lecture 05 - LINQ and Collections\Exercise 05\06.0 Console As Library\obj\x86\Debug\06.0 Console As Library.pdb
+C:\Course Material\UW\Courses\Intro to C#\Lectures\Lecture 05 - LINQ and Collections\Exercise 05\06.0 Console As Library\bin\Debug\06.0 Console As Library.exe
+C:\Course Material\UW\Courses\Intro to C#\Lectures\Lecture 05 - LINQ and Collections\Exercise 05\06.0 Console As Library\bin\Debug\06.0 Console As Library.pdb
+C:\Course Material\UW\Courses\Intro to C#\Lectures\Lecture 05 - LINQ and Collections\Exercise 05\06.0 Console As Library\bin\Debug\nunit.framework.dll
+C:\Course Material\UW\Courses\Intro to C#\Lectures\Lecture 05 - LINQ and Collections\Exercise 05\06.0 Console As Library\bin\Debug\nunit.framework.xml
+C:\Course Material\UW\Courses\Intro to C#\Lectures\Lecture 05 - LINQ and Collections\Exercise 05\06.0 Console As Library\obj\x86\Debug\06.0 Console As Library.csprojResolveAssemblyReference.cache
+C:\Users\usd33129\Documents\Visual Studio 2013\Projects\CSHP 810 Au15\Roy_Assignment\Console as Library\obj\x86\Debug\06.0 Console As Library.exe
+C:\Users\usd33129\Documents\Visual Studio 2013\Projects\CSHP 810 Au15\Roy_Assignment\Console as Library\obj\x86\Debug\06.0 Console As Library.pdb

@@ -1,0 +1,5 @@
+C:\Users\usd33129\Documents\Visual Studio 2013\Projects\CSHP 811 Wi16\CSHP811A Assignment 02\CalculatorOperations\bin\Debug\CalculatorOperations.dll
+C:\Users\usd33129\Documents\Visual Studio 2013\Projects\CSHP 811 Wi16\CSHP811A Assignment 02\CalculatorOperations\bin\Debug\CalculatorOperations.pdb
+C:\Users\usd33129\Documents\Visual Studio 2013\Projects\CSHP 811 Wi16\CSHP811A Assignment 02\CalculatorOperations\obj\Debug\CalculatorOperations.csprojResolveAssemblyReference.cache
+C:\Users\usd33129\Documents\Visual Studio 2013\Projects\CSHP 811 Wi16\CSHP811A Assignment 02\CalculatorOperations\obj\Debug\CalculatorOperations.dll
+C:\Users\usd33129\Documents\Visual Studio 2013\Projects\CSHP 811 Wi16\CSHP811A Assignment 02\CalculatorOperations\obj\Debug\CalculatorOperations.pdb

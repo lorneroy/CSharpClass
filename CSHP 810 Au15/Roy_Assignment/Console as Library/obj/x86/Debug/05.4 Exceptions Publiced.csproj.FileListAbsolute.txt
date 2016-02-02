@@ -1,0 +1,21 @@
+C:\Users\Intro to C#\Documents\Visual Studio 2010\Projects\IntroToCSharpExercises\05.4 Exceptions Publiced\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Intro to C#\Documents\Visual Studio 2010\Projects\IntroToCSharpExercises\05.4 Exceptions Publiced\bin\Debug\05.4 Exceptions Publiced.exe
+C:\Users\Intro to C#\Documents\Visual Studio 2010\Projects\IntroToCSharpExercises\05.4 Exceptions Publiced\bin\Debug\05.4 Exceptions Publiced.pdb
+C:\Users\Intro to C#\Documents\Visual Studio 2010\Projects\IntroToCSharpExercises\05.4 Exceptions Publiced\obj\x86\Debug\05.4 Exceptions Publiced.exe
+C:\Users\Intro to C#\Documents\Visual Studio 2010\Projects\IntroToCSharpExercises\05.4 Exceptions Publiced\obj\x86\Debug\05.4 Exceptions Publiced.pdb
+C:\Users\Intro to C#\Documents\Visual Studio 2010\Projects\IntroToCSharpExercises\05.4 Exceptions Publiced\bin\Debug\nunit.framework.dll
+C:\Users\Intro to C#\Documents\Visual Studio 2010\Projects\IntroToCSharpExercises\05.4 Exceptions Publiced\bin\Debug\nunit.framework.xml
+C:\Course Material\UW\Courses\Intro to C#\Lectures\Lecture 06 - Windows Forms\Exercise 05\05.4 Exceptions Publiced\obj\x86\Debug\05.4 Exceptions Publiced.exe
+C:\Course Material\UW\Courses\Intro to C#\Lectures\Lecture 06 - Windows Forms\Exercise 05\05.4 Exceptions Publiced\obj\x86\Debug\05.4 Exceptions Publiced.pdb
+C:\Course Material\UW\Courses\Intro to C#\Lectures\Lecture 06 - Windows Forms\Exercise 05\05.4 Exceptions Publiced\bin\Debug\05.4 Exceptions Publiced.exe
+C:\Course Material\UW\Courses\Intro to C#\Lectures\Lecture 06 - Windows Forms\Exercise 05\05.4 Exceptions Publiced\bin\Debug\05.4 Exceptions Publiced.pdb
+C:\Course Material\UW\Courses\Intro to C#\Lectures\Lecture 06 - Windows Forms\Exercise 05\05.4 Exceptions Publiced\bin\Debug\nunit.framework.dll
+C:\Course Material\UW\Courses\Intro to C#\Lectures\Lecture 06 - Windows Forms\Exercise 05\05.4 Exceptions Publiced\bin\Debug\nunit.framework.xml
+C:\Course Material\UW\Courses\Intro to C#\Lectures\Lecture 06 - Windows Forms\Exercise 05\05.4 Exceptions Publiced\obj\x86\Debug\05.4 Exceptions Publiced.csprojResolveAssemblyReference.cache
+C:\Course Material\UW\Courses\Intro to C#\Lectures\Lecture 05 - LINQ\Exercise 05\05.4 Exceptions Publiced\bin\Debug\05.4 Exceptions Publiced.exe
+C:\Course Material\UW\Courses\Intro to C#\Lectures\Lecture 05 - LINQ\Exercise 05\05.4 Exceptions Publiced\bin\Debug\05.4 Exceptions Publiced.pdb
+C:\Course Material\UW\Courses\Intro to C#\Lectures\Lecture 05 - LINQ\Exercise 05\05.4 Exceptions Publiced\bin\Debug\nunit.framework.dll
+C:\Course Material\UW\Courses\Intro to C#\Lectures\Lecture 05 - LINQ\Exercise 05\05.4 Exceptions Publiced\bin\Debug\nunit.framework.xml
+C:\Course Material\UW\Courses\Intro to C#\Lectures\Lecture 05 - LINQ\Exercise 05\05.4 Exceptions Publiced\obj\x86\Debug\05.4 Exceptions Publiced.csprojResolveAssemblyReference.cache
+C:\Course Material\UW\Courses\Intro to C#\Lectures\Lecture 05 - LINQ\Exercise 05\05.4 Exceptions Publiced\obj\x86\Debug\05.4 Exceptions Publiced.exe
+C:\Course Material\UW\Courses\Intro to C#\Lectures\Lecture 05 - LINQ\Exercise 05\05.4 Exceptions Publiced\obj\x86\Debug\05.4 Exceptions Publiced.pdb

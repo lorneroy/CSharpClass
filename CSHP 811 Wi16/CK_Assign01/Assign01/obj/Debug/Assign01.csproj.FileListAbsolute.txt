@@ -1,0 +1,9 @@
+C:\Users\kf332d\Documents\UW PCE\C# Client Apps\Assign01\Assign01\Assign01\bin\Debug\Assign01.exe.config
+C:\Users\kf332d\Documents\UW PCE\C# Client Apps\Assign01\Assign01\Assign01\bin\Debug\Assign01.exe
+C:\Users\kf332d\Documents\UW PCE\C# Client Apps\Assign01\Assign01\Assign01\bin\Debug\Assign01.pdb
+C:\Users\kf332d\Documents\UW PCE\C# Client Apps\Assign01\Assign01\Assign01\obj\Debug\Assign01.csprojResolveAssemblyReference.cache
+C:\Users\kf332d\Documents\UW PCE\C# Client Apps\Assign01\Assign01\Assign01\obj\Debug\Assign01.exe
+C:\Users\kf332d\Documents\UW PCE\C# Client Apps\Assign01\Assign01\Assign01\obj\Debug\Assign01.pdb
+C:\Users\usd33129\Documents\Visual Studio 2013\Projects\CSHP 811 Wi16\CK_Assign01\Assign01\bin\Debug\Assign01.exe.config
+C:\Users\usd33129\Documents\Visual Studio 2013\Projects\CSHP 811 Wi16\CK_Assign01\Assign01\obj\Debug\Assign01.exe
+C:\Users\usd33129\Documents\Visual Studio 2013\Projects\CSHP 811 Wi16\CK_Assign01\Assign01\obj\Debug\Assign01.pdb

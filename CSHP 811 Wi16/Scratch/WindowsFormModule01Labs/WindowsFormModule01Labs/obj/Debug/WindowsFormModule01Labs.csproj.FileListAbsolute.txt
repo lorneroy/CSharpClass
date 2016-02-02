@@ -1,0 +1,9 @@
+C:\Users\usd33129\Documents\Visual Studio 2013\Projects\CSHP 811 Wi16\Scratch\WindowsFormModule01Labs\WindowsFormModule01Labs\bin\Debug\WindowsFormModule01Labs.exe.config
+C:\Users\usd33129\Documents\Visual Studio 2013\Projects\CSHP 811 Wi16\Scratch\WindowsFormModule01Labs\WindowsFormModule01Labs\obj\Debug\WindowsFormModule01Labs.csprojResolveAssemblyReference.cache
+C:\Users\usd33129\Documents\Visual Studio 2013\Projects\CSHP 811 Wi16\Scratch\WindowsFormModule01Labs\WindowsFormModule01Labs\obj\Debug\WindowsFormModule01Labs.Form1.resources
+C:\Users\usd33129\Documents\Visual Studio 2013\Projects\CSHP 811 Wi16\Scratch\WindowsFormModule01Labs\WindowsFormModule01Labs\obj\Debug\WindowsFormModule01Labs.Properties.Resources.resources
+C:\Users\usd33129\Documents\Visual Studio 2013\Projects\CSHP 811 Wi16\Scratch\WindowsFormModule01Labs\WindowsFormModule01Labs\obj\Debug\WindowsFormModule01Labs.csproj.GenerateResource.Cache
+C:\Users\usd33129\Documents\Visual Studio 2013\Projects\CSHP 811 Wi16\Scratch\WindowsFormModule01Labs\WindowsFormModule01Labs\bin\Debug\WindowsFormModule01Labs.exe
+C:\Users\usd33129\Documents\Visual Studio 2013\Projects\CSHP 811 Wi16\Scratch\WindowsFormModule01Labs\WindowsFormModule01Labs\bin\Debug\WindowsFormModule01Labs.pdb
+C:\Users\usd33129\Documents\Visual Studio 2013\Projects\CSHP 811 Wi16\Scratch\WindowsFormModule01Labs\WindowsFormModule01Labs\obj\Debug\WindowsFormModule01Labs.exe
+C:\Users\usd33129\Documents\Visual Studio 2013\Projects\CSHP 811 Wi16\Scratch\WindowsFormModule01Labs\WindowsFormModule01Labs\obj\Debug\WindowsFormModule01Labs.pdb

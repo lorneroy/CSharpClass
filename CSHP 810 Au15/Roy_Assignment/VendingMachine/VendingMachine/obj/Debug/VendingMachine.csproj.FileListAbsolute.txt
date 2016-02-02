@@ -1,0 +1,15 @@
+C:\Users\usd33129\Documents\Visual Studio 2013\Projects\CSHP 810 Au15\Roy_Assignment\VendingMachine\VendingMachine\bin\Debug\VendingMachine.exe.config
+C:\Users\usd33129\Documents\Visual Studio 2013\Projects\CSHP 810 Au15\Roy_Assignment\VendingMachine\VendingMachine\bin\Debug\VendingMachine.exe
+C:\Users\usd33129\Documents\Visual Studio 2013\Projects\CSHP 810 Au15\Roy_Assignment\VendingMachine\VendingMachine\bin\Debug\VendingMachine.pdb
+C:\Users\usd33129\Documents\Visual Studio 2013\Projects\CSHP 810 Au15\Roy_Assignment\VendingMachine\VendingMachine\bin\Debug\06.0 Console As Library.pdb
+C:\Users\usd33129\Documents\Visual Studio 2013\Projects\CSHP 810 Au15\Roy_Assignment\VendingMachine\VendingMachine\obj\Debug\VendingMachine.csprojResolveAssemblyReference.cache
+C:\Users\usd33129\Documents\Visual Studio 2013\Projects\CSHP 810 Au15\Roy_Assignment\VendingMachine\VendingMachine\obj\Debug\VendingMachine.VendingMachine.resources
+C:\Users\usd33129\Documents\Visual Studio 2013\Projects\CSHP 810 Au15\Roy_Assignment\VendingMachine\VendingMachine\obj\Debug\VendingMachine.Properties.Resources.resources
+C:\Users\usd33129\Documents\Visual Studio 2013\Projects\CSHP 810 Au15\Roy_Assignment\VendingMachine\VendingMachine\obj\Debug\VendingMachine.csproj.GenerateResource.Cache
+C:\Users\usd33129\Documents\Visual Studio 2013\Projects\CSHP 810 Au15\Roy_Assignment\VendingMachine\VendingMachine\obj\Debug\VendingMachine.exe
+C:\Users\usd33129\Documents\Visual Studio 2013\Projects\CSHP 810 Au15\Roy_Assignment\VendingMachine\VendingMachine\obj\Debug\VendingMachine.pdb
+C:\Users\usd33129\Documents\Visual Studio 2013\Projects\CSHP 810 Au15\Roy_Assignment\VendingMachine\VendingMachine\bin\Debug\06.0 Console As Library.exe
+C:\Users\usd33129\Documents\Visual Studio 2013\Projects\CSHP 810 Au15\Roy_Assignment\VendingMachine\VendingMachine\obj\Debug\VendingMachine.FormServiceNotes.resources
+C:\Users\usd33129\Documents\Visual Studio 2013\Projects\CSHP 810 Au15\Roy_Assignment\VendingMachine\VendingMachine\obj\Debug\VendingMachine.FormServiceNotesChild.resources
+C:\Users\usd33129\Documents\Visual Studio 2013\Projects\CSHP 810 Au15\Roy_Assignment\VendingMachine\VendingMachine\bin\Debug\ClassLibrarySnacks.dll
+C:\Users\usd33129\Documents\Visual Studio 2013\Projects\CSHP 810 Au15\Roy_Assignment\VendingMachine\VendingMachine\bin\Debug\ClassLibrarySnacks.pdb

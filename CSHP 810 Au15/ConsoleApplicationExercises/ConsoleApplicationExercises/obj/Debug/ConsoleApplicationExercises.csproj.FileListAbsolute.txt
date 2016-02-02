@@ -1,0 +1,6 @@
+C:\Users\usd33129\Documents\Visual Studio 2013\Projects\CSHP 810 Au15\ConsoleApplicationExercises\ConsoleApplicationExercises\bin\Debug\ConsoleApplicationExercises.exe.config
+C:\Users\usd33129\Documents\Visual Studio 2013\Projects\CSHP 810 Au15\ConsoleApplicationExercises\ConsoleApplicationExercises\obj\Debug\ConsoleApplicationExercises.csprojResolveAssemblyReference.cache
+C:\Users\usd33129\Documents\Visual Studio 2013\Projects\CSHP 810 Au15\ConsoleApplicationExercises\ConsoleApplicationExercises\bin\Debug\ConsoleApplicationExercises.exe
+C:\Users\usd33129\Documents\Visual Studio 2013\Projects\CSHP 810 Au15\ConsoleApplicationExercises\ConsoleApplicationExercises\bin\Debug\ConsoleApplicationExercises.pdb
+C:\Users\usd33129\Documents\Visual Studio 2013\Projects\CSHP 810 Au15\ConsoleApplicationExercises\ConsoleApplicationExercises\obj\Debug\ConsoleApplicationExercises.exe
+C:\Users\usd33129\Documents\Visual Studio 2013\Projects\CSHP 810 Au15\ConsoleApplicationExercises\ConsoleApplicationExercises\obj\Debug\ConsoleApplicationExercises.pdb
