@@ -29,7 +29,8 @@ namespace FileAccess
         #endregion
 
         #region methods
-        //In this type of class the methods are its focus
+
+        
         public void SaveToFile(string Data)
         {
             try
