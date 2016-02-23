@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="TypedDataSetForDBInfo" targetNamespace="http://tempuri.org/TypedDataSetForDBInfo.xsd" xmlns:mstns="http://tempuri.org/TypedDataSetForDBInfo.xsd" xmlns="http://tempuri.org/TypedDataSetForDBInfo.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="TypedDataSetForDBInfo" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_DataSetName="TypedDataSetForDBInfo" msprop:Generator_UserDSName="TypedDataSetForDBInfo" msprop:EnableTableAdapterManager="true">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="DataTableDBInfo" msprop:Generator_UserTableName="DataTableDBInfo" msprop:Generator_RowDeletedName="DataTableDBInfoRowDeleted" msprop:Generator_TableClassName="DataTableDBInfoDataTable" msprop:Generator_RowChangedName="DataTableDBInfoRowChanged" msprop:Generator_RowClassName="DataTableDBInfoRow" msprop:Generator_RowChangingName="DataTableDBInfoRowChanging" msprop:Generator_RowEvArgName="DataTableDBInfoRowChangeEvent" msprop:Generator_RowEvHandlerName="DataTableDBInfoRowChangeEventHandler" msprop:Generator_TablePropName="DataTableDBInfo" msprop:Generator_TableVarName="tableDataTableDBInfo" msprop:Generator_RowDeletingName="DataTableDBInfoRowDeleting">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="DatabaseId" msprop:Generator_UserColumnName="DatabaseId" msprop:Generator_ColumnPropNameInRow="DatabaseId" msprop:Generator_ColumnVarNameInTable="columnDatabaseId" msprop:Generator_ColumnPropNameInTable="DatabaseIdColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="DatabaseName" msprop:Generator_UserColumnName="DatabaseName" msprop:Generator_ColumnPropNameInRow="DatabaseName" msprop:Generator_ColumnVarNameInTable="columnDatabaseName" msprop:Generator_ColumnPropNameInTable="DatabaseNameColumn" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:DataTableDBInfo" />
+      <xs:field xpath="mstns:DatabaseId" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

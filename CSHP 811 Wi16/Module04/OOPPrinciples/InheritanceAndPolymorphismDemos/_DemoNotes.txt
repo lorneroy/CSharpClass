@@ -1,0 +1,206 @@
+﻿Inheritance and Polymorphism Demos
+
+*********** REVIEW TOPICS! ************
+
+	1) Visual Studio Class Diagrams
+	2) Code reuse comes in two flavors
+		*Classic Inheritance = "is-a" relationship 
+			* Parent - Child Classes
+			* Base classes define general characteristics of all descendents
+			* The .NET platform does not allow multiple inheritance for classes
+	
+		*Containment/delegation model = "has-a" relationship
+			* Employees Class has a BenefitPackage object
+		
+			partial class Employee
+			{
+			  // Contain a BenefitPackage object.
+			  protected BenefitPackage empBenefits = new BenefitPackage();
+			...
+			}
+
+	3) Access Modifiers
+		* Public
+		* Private
+			* Non-nested classes cannot be declared using the private keyword
+		* Protected
+			* Protected data is regarded as private "outside" of the Inheritance "Family"	
+		* Internal 
+			* Internal data is regarded as private "outside" of the Assembly		
+		* Protected Internal
+
+*********** NEW TOPICS! ************
+1) Inheritance Modifiers
+	* Abstract 
+		 * Requires inheritance
+	* Sealed
+		* Prevents inheritance
+ 	* Static
+ 		* Object instances cannot be made
+
+* Sealed classes cannot be extended, but it is possible to reuse the functionality found 
+within a class marked sealed with containment/delegation model 
+
+2) Constructors
+	* Unless you say otherwise, the default constructor of a base class 
+	is IMPLICITLY called before the logic of the derived constructor is executed. 
+	To optimize the creation of a derived class EXPLICITLY call an appropriate custom 
+	base class constructor.
+
+        public Employee(int EmployeeId, string Name, DateTime DOB, Gender Gender)
+        :base(Name, DOB, Gender) 
+        {
+           this.EmployeeId = EmployeeId;
+           // this.Name = Name; This is not needed since the base constructor will be 
+           // passed the data in with  :base(Name, DOB, Gender) 
+        }
+
+3) The ABSTRACT, VIRTUAL, OVERRIDE, and NEW Keywords (Show MethodModifier.cs)
+* abstract
+	* abstract method can only be in abstract classes
+	  If you wish a base class method be overridden 
+	  by a subclass, mark the method with the abstract keyword:
+
+	  public abstract void GiveBonus(float amount)
+	 // { don't include code here! }
+	 	  
+* virtual
+	* If you wish a base class method to optionally be overridden 
+	  by a subclass, mark the method with the virtual keyword:
+
+	  public virtual void GiveBonus(float amount)
+	  {
+		currPay += amount;
+	  }
+	 
+* override
+	* A overridden method is free to leverage the default behavior using the base keyword
+	* The overridden base method must have the same signature as the override method. 
+ 
+	  public override void GiveBonus(float amount)
+	  {
+		base.GiveBonus(amount);
+	  }
+
+* new
+	* Sometimes called Member Shadowing or Hiding
+	* Works with properties, fields, constants, and methods
+	* Often used when you buy software from a third party and you don't have 
+	  access to the code defining the base class 
+	* A new method leverages the default behavior using a CAST
+	
+	  public new void GiveBonus(float amount)
+	  {
+		 float current += amount;
+	  }
+
+		Class Demo{
+			public Main() {
+				Manager objM = new Manager()
+				//Cast to call base classes GiveBonus method!
+				(Employee)objM.GiveBonus(amount);
+			}
+}
+
+	/****************** Lab: ***************
+	-- a) Add a new Windows Project to this VS solution called Ch6Labs
+	-- b) Create a abstract class called Room using the VS diagram tool in the 
+		  Ch6Labs project.
+	-- c) Add the following to the Room class:
+			Fields: strNumber, fltWidth, fltSize, intOutlets
+			Events:
+			Constructor: Room(), Room(Number, Width, Size, Outlets)
+			Properties: Number, Width, Size, Outlets
+			Methods: GetData()
+	-- d) Create a child class called Classroom using the VS diagram tool in the 
+		  Ch6Labs project that inherits from the Room class.
+	-- e) Add the following to the Room class:
+			Fields: blnHasProjector, blnHasWhiteboard 
+			Events:
+			Constructor: Classroom(), Classroom(Number, Width, Size, Outlets, HasProjector, HasWhiteboard )
+			Properties: Number, Width, Size, Outlets, HasProjector, HasWhiteboard
+			Methods: GetData()
+	-- f) Create a child class called Office using the VS diagram tool in the 
+		  Ch6Labs project that inherits from the Room class.
+	-- g) Add the following to the Office class:
+			Fields: blnHasWindow
+			Events:
+			Constructor: Office(), Office(Number, Width, Size, Outlets, HasWindow)
+			Properties: Number, Width, Size, Outlets, Projector, HasWindow
+			Methods: GetData()
+
+	-- h) Form1 and test that the new objects can be created using the Classroom
+	and Office classes and that there GetData method works!
+	/**********************************
+
+4) Programming for Delegation
+* Not the same as a Delegate type!
+* Used to expose the FUNCTIONALITY of a object to the outside world INDIRECTLY. 
+* Delegation is simply the act of adding public members to the containing 
+  class that make use of the contained object's functionality.
+
+		public partial class Employee
+		{
+		  // Contain a BenefitPackage object.
+		  protected BenefitPackage empBenefits = new BenefitPackage();
+
+		  // Expose certain benefit behaviors of object.
+		  public double GetBenefitCost()
+
+		  { return empBenefits.ComputePayDeduction(); }
+
+		  // Expose object through a custom property.
+		  public BenefitPackage Benefits
+		  {
+			get { return empBenefits; }
+			set { empBenefits = value; }
+		  }
+		...
+		}
+
+5) Programming for Containment
+* Define a type (enum, class, interface, struct, or delegate) directly 
+  within the scope of a class or structure.
+* Not usually exposed to the outside objects.
+* Used to organize private code.
+
+		public class OuterClass
+		{
+		  // A public nested type can be used by anybody.
+		  public class PublicInnerClass {}
+
+		  // A private nested type can only be used by members
+		  // of the containing class.
+		  private class PrivateInnerClass {}
+		}
+
+* The following are traits of nesting a type:
+
+	* Nested types allow you to gain complete control over the access level of the inner type, as they may be 
+	  declared privately (recall that non-nested classes cannot be declared using the private keyword).
+	* Because a nested type is a member of the containing class, it can access private members of the containing class.
+	* Oftentimes, a nested type is only useful as a helper for the outer class, and is not intended for use by the outside world.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

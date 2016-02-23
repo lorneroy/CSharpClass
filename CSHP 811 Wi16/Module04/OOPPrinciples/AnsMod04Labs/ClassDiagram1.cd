@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Mod04Labs.Room">
+    <Position X="3" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Room.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Mod04Labs.Classroom">
+    <Position X="5" Y="2" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAEACAAAAAAAAAAAA=</HashCode>
+      <FileName>Classroom.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="RoomFurniture" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Mod04Labs.Office">
+    <Position X="5" Y="3.75" Width="1.75" />
+    <InheritanceLine Type="Mod04Labs.Room" FixedToPoint="true">
+      <Path>
+        <Point X="3.75" Y="2.868" />
+        <Point X="3.75" Y="3.45" />
+        <Point X="5.812" Y="3.45" />
+        <Point X="5.812" Y="3.75" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAEACAAAAAAAAAAAA=</HashCode>
+      <FileName>Office.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="RoomFurniture" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Mod04Labs.FurnitureSet">
+    <Position X="8" Y="2" Width="2.25" />
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Class Name="Mod04Labs.FurnitureSet.Furniture">
+        <TypeIdentifier>
+          <NewMemberFileName>Furniture.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+      <Enum Name="Mod04Labs.FurnitureSet.ItemTypes">
+        <TypeIdentifier>
+          <NewMemberFileName>Furniture.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAQEAAAAAAAEAAAAAAAAAAAAA=</HashCode>
+      <FileName>Furniture.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Interface Name="Mod04Labs.IRoom">
+    <Position X="3" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>IRoom.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Mod04Labs.IFurnitureSet">
+    <Position X="8" Y="0.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>IFurniture.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
