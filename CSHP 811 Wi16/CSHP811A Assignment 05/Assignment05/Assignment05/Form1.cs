@@ -52,8 +52,8 @@ namespace Assignment05
 
                         //add parameters to procedure
                         sqlCommand.Parameters.Add( new SqlParameter("@FirstName", textBoxFirstName.Text));
-                        sqlCommand.Parameters.Add( new SqlParameter("@LastName", textBoxFirstName.Text));
-                        sqlCommand.Parameters.Add( new SqlParameter("@PhoneNumber", textBoxFirstName.Text));
+                        sqlCommand.Parameters.Add( new SqlParameter("@LastName", textBoxLastName.Text));
+                        sqlCommand.Parameters.Add( new SqlParameter("@PhoneNumber", textBoxPhoneNumber.Text));
 
 
                         sqlCommand.ExecuteNonQuery();

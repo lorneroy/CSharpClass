@@ -1,0 +1,478 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="EntityFrameworkDemosModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="EntityFrameworkDemosModelStoreContainer">
+          <EntitySet Name="Customers" EntityType="EntityFrameworkDemosModel.Store.Customers" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="OrderLineItems" EntityType="EntityFrameworkDemosModel.Store.OrderLineItems" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Orders" EntityType="EntityFrameworkDemosModel.Store.Orders" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Products" EntityType="EntityFrameworkDemosModel.Store.Products" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="vCustomers" EntityType="EntityFrameworkDemosModel.Store.vCustomers" store:Type="Views" store:Schema="dbo" store:Name="vCustomers">
+            <DefiningQuery>SELECT 
+      [vCustomers].[CustomerID] AS [CustomerID], 
+      [vCustomers].[CustomerName] AS [CustomerName]
+      FROM [dbo].[vCustomers] AS [vCustomers]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vOrderLineItems" EntityType="EntityFrameworkDemosModel.Store.vOrderLineItems" store:Type="Views" store:Schema="dbo" store:Name="vOrderLineItems">
+            <DefiningQuery>SELECT 
+      [vOrderLineItems].[OrderID] AS [OrderID], 
+      [vOrderLineItems].[OrderLineItemID] AS [OrderLineItemID], 
+      [vOrderLineItems].[ProductID] AS [ProductID], 
+      [vOrderLineItems].[OrderQty] AS [OrderQty], 
+      [vOrderLineItems].[OrderSalesPrice] AS [OrderSalesPrice]
+      FROM [dbo].[vOrderLineItems] AS [vOrderLineItems]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vOrders" EntityType="EntityFrameworkDemosModel.Store.vOrders" store:Type="Views" store:Schema="dbo" store:Name="vOrders">
+            <DefiningQuery>SELECT 
+      [vOrders].[OrderID] AS [OrderID], 
+      [vOrders].[CustomerId] AS [CustomerId], 
+      [vOrders].[OrderDate] AS [OrderDate]
+      FROM [dbo].[vOrders] AS [vOrders]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vProducts" EntityType="EntityFrameworkDemosModel.Store.vProducts" store:Type="Views" store:Schema="dbo" store:Name="vProducts">
+            <DefiningQuery>SELECT 
+      [vProducts].[ProductID] AS [ProductID], 
+      [vProducts].[ProductName] AS [ProductName], 
+      [vProducts].[ProductPrice] AS [ProductPrice]
+      FROM [dbo].[vProducts] AS [vProducts]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vRptOrdersByProducts" EntityType="EntityFrameworkDemosModel.Store.vRptOrdersByProducts" store:Type="Views" store:Schema="dbo" store:Name="vRptOrdersByProducts">
+            <DefiningQuery>SELECT 
+      [vRptOrdersByProducts].[ProductName] AS [ProductName], 
+      [vRptOrdersByProducts].[OrderId] AS [OrderId], 
+      [vRptOrdersByProducts].[CustomerName] AS [CustomerName], 
+      [vRptOrdersByProducts].[OrderDate] AS [OrderDate], 
+      [vRptOrdersByProducts].[OrderQty] AS [OrderQty], 
+      [vRptOrdersByProducts].[OrderSalesPrice] AS [OrderSalesPrice]
+      FROM [dbo].[vRptOrdersByProducts] AS [vRptOrdersByProducts]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="fkOrderLineItemsToOrders" Association="EntityFrameworkDemosModel.Store.fkOrderLineItemsToOrders">
+            <End Role="Orders" EntitySet="Orders" />
+            <End Role="OrderLineItems" EntitySet="OrderLineItems" />
+          </AssociationSet>
+          <AssociationSet Name="fkOrderLineItemsToProducts" Association="EntityFrameworkDemosModel.Store.fkOrderLineItemsToProducts">
+            <End Role="Products" EntitySet="Products" />
+            <End Role="OrderLineItems" EntitySet="OrderLineItems" />
+          </AssociationSet>
+          <AssociationSet Name="fkOrdersToCustomers" Association="EntityFrameworkDemosModel.Store.fkOrdersToCustomers">
+            <End Role="Customers" EntitySet="Customers" />
+            <End Role="Orders" EntitySet="Orders" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Customers">
+          <Key>
+            <PropertyRef Name="CustomerID" />
+          </Key>
+          <Property Name="CustomerID" Type="int" Nullable="false" />
+          <Property Name="CustomerName" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="OrderLineItems">
+          <Key>
+            <PropertyRef Name="OrderID" />
+            <PropertyRef Name="ProductID" />
+          </Key>
+          <Property Name="OrderID" Type="int" Nullable="false" />
+          <Property Name="OrderLineItemID" Type="int" />
+          <Property Name="ProductID" Type="int" Nullable="false" />
+          <Property Name="OrderQty" Type="int" />
+          <Property Name="OrderSalesPrice" Type="decimal" Scale="2" />
+        </EntityType>
+        <EntityType Name="Orders">
+          <Key>
+            <PropertyRef Name="OrderID" />
+          </Key>
+          <Property Name="OrderID" Type="int" Nullable="false" />
+          <Property Name="CustomerId" Type="int" />
+          <Property Name="OrderDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Products">
+          <Key>
+            <PropertyRef Name="ProductID" />
+          </Key>
+          <Property Name="ProductID" Type="int" Nullable="false" />
+          <Property Name="ProductName" Type="nvarchar" MaxLength="100" />
+          <Property Name="ProductPrice" Type="decimal" Scale="2" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'EntityFrameworkDemos.dbo.vCustomers' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="vCustomers">
+          <Key>
+            <PropertyRef Name="CustomerID" />
+          </Key>
+          <Property Name="CustomerID" Type="int" Nullable="false" />
+          <Property Name="CustomerName" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'EntityFrameworkDemos.dbo.vOrderLineItems' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="vOrderLineItems">
+          <Key>
+            <PropertyRef Name="OrderID" />
+            <PropertyRef Name="ProductID" />
+          </Key>
+          <Property Name="OrderID" Type="int" Nullable="false" />
+          <Property Name="OrderLineItemID" Type="int" />
+          <Property Name="ProductID" Type="int" Nullable="false" />
+          <Property Name="OrderQty" Type="int" />
+          <Property Name="OrderSalesPrice" Type="decimal" Scale="2" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'EntityFrameworkDemos.dbo.vOrders' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="vOrders">
+          <Key>
+            <PropertyRef Name="OrderID" />
+          </Key>
+          <Property Name="OrderID" Type="int" Nullable="false" />
+          <Property Name="CustomerId" Type="int" />
+          <Property Name="OrderDate" Type="datetime" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'EntityFrameworkDemos.dbo.vProducts' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="vProducts">
+          <Key>
+            <PropertyRef Name="ProductID" />
+          </Key>
+          <Property Name="ProductID" Type="int" Nullable="false" />
+          <Property Name="ProductName" Type="nvarchar" MaxLength="100" />
+          <Property Name="ProductPrice" Type="decimal" Scale="2" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'EntityFrameworkDemos.dbo.vRptOrdersByProducts' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="vRptOrdersByProducts">
+          <Key>
+            <PropertyRef Name="OrderId" />
+          </Key>
+          <Property Name="ProductName" Type="nvarchar" MaxLength="100" />
+          <Property Name="OrderId" Type="int" Nullable="false" />
+          <Property Name="CustomerName" Type="nvarchar" MaxLength="100" />
+          <Property Name="OrderDate" Type="datetime" />
+          <Property Name="OrderQty" Type="int" />
+          <Property Name="OrderSalesPrice" Type="decimal" Scale="2" />
+        </EntityType>
+        <Association Name="fkOrderLineItemsToOrders">
+          <End Role="Orders" Type="EntityFrameworkDemosModel.Store.Orders" Multiplicity="1" />
+          <End Role="OrderLineItems" Type="EntityFrameworkDemosModel.Store.OrderLineItems" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Orders">
+              <PropertyRef Name="OrderID" />
+            </Principal>
+            <Dependent Role="OrderLineItems">
+              <PropertyRef Name="OrderID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fkOrderLineItemsToProducts">
+          <End Role="Products" Type="EntityFrameworkDemosModel.Store.Products" Multiplicity="1" />
+          <End Role="OrderLineItems" Type="EntityFrameworkDemosModel.Store.OrderLineItems" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Products">
+              <PropertyRef Name="ProductID" />
+            </Principal>
+            <Dependent Role="OrderLineItems">
+              <PropertyRef Name="ProductID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fkOrdersToCustomers">
+          <End Role="Customers" Type="EntityFrameworkDemosModel.Store.Customers" Multiplicity="0..1" />
+          <End Role="Orders" Type="EntityFrameworkDemosModel.Store.Orders" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customers">
+              <PropertyRef Name="CustomerID" />
+            </Principal>
+            <Dependent Role="Orders">
+              <PropertyRef Name="CustomerId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="pDelCustomer" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="CustomerID" Type="int" Mode="In" />
+        </Function>
+        <Function Name="pInsCustomer" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="CustomerID" Type="int" Mode="In" />
+          <Parameter Name="CustomerName" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="pUpdateCustomer" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="CustomerID" Type="int" Mode="In" />
+          <Parameter Name="CustomerName" Type="nvarchar" Mode="In" />
+        </Function>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="EntityFrameworkDemosModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="EntityFrameworkDemosEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Customers" EntityType="EntityFrameworkDemosModel.Customer" />
+          <EntitySet Name="OrderLineItems" EntityType="EntityFrameworkDemosModel.OrderLineItem" />
+          <EntitySet Name="Orders" EntityType="EntityFrameworkDemosModel.Order" />
+          <EntitySet Name="Products" EntityType="EntityFrameworkDemosModel.Product" />
+          <EntitySet Name="vCustomers" EntityType="EntityFrameworkDemosModel.vCustomer" />
+          <EntitySet Name="vOrderLineItems" EntityType="EntityFrameworkDemosModel.vOrderLineItem" />
+          <EntitySet Name="vOrders" EntityType="EntityFrameworkDemosModel.vOrder" />
+          <EntitySet Name="vProducts" EntityType="EntityFrameworkDemosModel.vProduct" />
+          <EntitySet Name="vRptOrdersByProducts" EntityType="EntityFrameworkDemosModel.vRptOrdersByProduct" />
+          <AssociationSet Name="fkOrdersToCustomers" Association="EntityFrameworkDemosModel.fkOrdersToCustomers">
+            <End Role="Customers" EntitySet="Customers" />
+            <End Role="Orders" EntitySet="Orders" />
+          </AssociationSet>
+          <AssociationSet Name="fkOrderLineItemsToOrders" Association="EntityFrameworkDemosModel.fkOrderLineItemsToOrders">
+            <End Role="Orders" EntitySet="Orders" />
+            <End Role="OrderLineItems" EntitySet="OrderLineItems" />
+          </AssociationSet>
+          <AssociationSet Name="fkOrderLineItemsToProducts" Association="EntityFrameworkDemosModel.fkOrderLineItemsToProducts">
+            <End Role="Products" EntitySet="Products" />
+            <End Role="OrderLineItems" EntitySet="OrderLineItems" />
+          </AssociationSet>
+          <FunctionImport Name="pDelCustomer">
+          <Parameter Name="CustomerID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="pInsCustomer">
+            <Parameter Name="CustomerID" Mode="In" Type="Int32" />
+            <Parameter Name="CustomerName" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="pUpdateCustomer">
+            <Parameter Name="CustomerID" Mode="In" Type="Int32" />
+            <Parameter Name="CustomerName" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="pRptOrdersByProducts" ReturnType="Collection(EntityFrameworkDemosModel.pRptOrdersByProducts_Result)" />
+        </EntityContainer>
+        <EntityType Name="Customer">
+          <Key>
+            <PropertyRef Name="CustomerID" />
+          </Key>
+          <Property Name="CustomerID" Type="Int32" Nullable="false" />
+          <Property Name="CustomerName" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Orders" Relationship="EntityFrameworkDemosModel.fkOrdersToCustomers" FromRole="Customers" ToRole="Orders" />
+        </EntityType>
+        <EntityType Name="OrderLineItem">
+          <Key>
+            <PropertyRef Name="OrderID" />
+            <PropertyRef Name="ProductID" />
+          </Key>
+          <Property Name="OrderID" Type="Int32" Nullable="false" />
+          <Property Name="OrderLineItemID" Type="Int32" />
+          <Property Name="ProductID" Type="Int32" Nullable="false" />
+          <Property Name="OrderQty" Type="Int32" />
+          <Property Name="OrderSalesPrice" Type="Decimal" Precision="18" Scale="2" />
+          <NavigationProperty Name="Order" Relationship="EntityFrameworkDemosModel.fkOrderLineItemsToOrders" FromRole="OrderLineItems" ToRole="Orders" />
+          <NavigationProperty Name="Product" Relationship="EntityFrameworkDemosModel.fkOrderLineItemsToProducts" FromRole="OrderLineItems" ToRole="Products" />
+        </EntityType>
+        <EntityType Name="Order">
+          <Key>
+            <PropertyRef Name="OrderID" />
+          </Key>
+          <Property Name="OrderID" Type="Int32" Nullable="false" />
+          <Property Name="CustomerId" Type="Int32" />
+          <Property Name="OrderDate" Type="DateTime" />
+          <NavigationProperty Name="Customer" Relationship="EntityFrameworkDemosModel.fkOrdersToCustomers" FromRole="Orders" ToRole="Customers" />
+          <NavigationProperty Name="OrderLineItems" Relationship="EntityFrameworkDemosModel.fkOrderLineItemsToOrders" FromRole="Orders" ToRole="OrderLineItems" />
+        </EntityType>
+        <EntityType Name="Product">
+          <Key>
+            <PropertyRef Name="ProductID" />
+          </Key>
+          <Property Name="ProductID" Type="Int32" Nullable="false" />
+          <Property Name="ProductName" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="ProductPrice" Type="Decimal" Precision="18" Scale="2" />
+          <NavigationProperty Name="OrderLineItems" Relationship="EntityFrameworkDemosModel.fkOrderLineItemsToProducts" FromRole="Products" ToRole="OrderLineItems" />
+        </EntityType>
+        <EntityType Name="vCustomer">
+          <Key>
+            <PropertyRef Name="CustomerID" />
+          </Key>
+          <Property Name="CustomerID" Type="Int32" Nullable="false" />
+          <Property Name="CustomerName" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="vOrderLineItem">
+          <Key>
+            <PropertyRef Name="OrderID" />
+            <PropertyRef Name="ProductID" />
+          </Key>
+          <Property Name="OrderID" Type="Int32" Nullable="false" />
+          <Property Name="OrderLineItemID" Type="Int32" />
+          <Property Name="ProductID" Type="Int32" Nullable="false" />
+          <Property Name="OrderQty" Type="Int32" />
+          <Property Name="OrderSalesPrice" Type="Decimal" Precision="18" Scale="2" />
+        </EntityType>
+        <EntityType Name="vOrder">
+          <Key>
+            <PropertyRef Name="OrderID" />
+          </Key>
+          <Property Name="OrderID" Type="Int32" Nullable="false" />
+          <Property Name="CustomerId" Type="Int32" />
+          <Property Name="OrderDate" Type="DateTime" />
+        </EntityType>
+        <EntityType Name="vProduct">
+          <Key>
+            <PropertyRef Name="ProductID" />
+          </Key>
+          <Property Name="ProductID" Type="Int32" Nullable="false" />
+          <Property Name="ProductName" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="ProductPrice" Type="Decimal" Precision="18" Scale="2" />
+        </EntityType>
+        <EntityType Name="vRptOrdersByProduct">
+          <Key>
+            <PropertyRef Name="OrderId" />
+          </Key>
+          <Property Name="ProductName" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="OrderId" Type="Int32" Nullable="false" />
+          <Property Name="CustomerName" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="OrderDate" Type="DateTime" />
+          <Property Name="OrderQty" Type="Int32" />
+          <Property Name="OrderSalesPrice" Type="Decimal" Precision="18" Scale="2" />
+        </EntityType>
+        <Association Name="fkOrdersToCustomers">
+          <End Role="Customers" Type="EntityFrameworkDemosModel.Customer" Multiplicity="0..1" />
+          <End Role="Orders" Type="EntityFrameworkDemosModel.Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customers">
+              <PropertyRef Name="CustomerID" />
+            </Principal>
+            <Dependent Role="Orders">
+              <PropertyRef Name="CustomerId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fkOrderLineItemsToOrders">
+          <End Role="Orders" Type="EntityFrameworkDemosModel.Order" Multiplicity="1" />
+          <End Role="OrderLineItems" Type="EntityFrameworkDemosModel.OrderLineItem" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Orders">
+              <PropertyRef Name="OrderID" />
+            </Principal>
+            <Dependent Role="OrderLineItems">
+              <PropertyRef Name="OrderID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fkOrderLineItemsToProducts">
+          <End Role="Products" Type="EntityFrameworkDemosModel.Product" Multiplicity="1" />
+          <End Role="OrderLineItems" Type="EntityFrameworkDemosModel.OrderLineItem" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Products">
+              <PropertyRef Name="ProductID" />
+            </Principal>
+            <Dependent Role="OrderLineItems">
+              <PropertyRef Name="ProductID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <ComplexType Name="pRptOrdersByProducts_Result">
+          <Property Type="String" Name="ProductName" Nullable="true" MaxLength="100" />
+          <Property Type="Int32" Name="OrderId" Nullable="false" />
+          <Property Type="String" Name="CustomerName" Nullable="true" MaxLength="100" />
+          <Property Type="DateTime" Name="OrderDate" Nullable="true" Precision="23" />
+          <Property Type="Int32" Name="OrderQty" Nullable="true" />
+          <Property Type="Decimal" Name="OrderSalesPrice" Nullable="true" Precision="18" Scale="2" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="EntityFrameworkDemosModelStoreContainer" CdmEntityContainer="EntityFrameworkDemosEntities">
+          <EntitySetMapping Name="Customers"><EntityTypeMapping TypeName="EntityFrameworkDemosModel.Customer"><MappingFragment StoreEntitySet="Customers">
+            <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+            <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="OrderLineItems"><EntityTypeMapping TypeName="EntityFrameworkDemosModel.OrderLineItem"><MappingFragment StoreEntitySet="OrderLineItems">
+            <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+            <ScalarProperty Name="OrderLineItemID" ColumnName="OrderLineItemID" />
+            <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+            <ScalarProperty Name="OrderQty" ColumnName="OrderQty" />
+            <ScalarProperty Name="OrderSalesPrice" ColumnName="OrderSalesPrice" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Orders"><EntityTypeMapping TypeName="EntityFrameworkDemosModel.Order"><MappingFragment StoreEntitySet="Orders">
+            <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+            <ScalarProperty Name="CustomerId" ColumnName="CustomerId" />
+            <ScalarProperty Name="OrderDate" ColumnName="OrderDate" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Products"><EntityTypeMapping TypeName="EntityFrameworkDemosModel.Product"><MappingFragment StoreEntitySet="Products">
+            <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+            <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+            <ScalarProperty Name="ProductPrice" ColumnName="ProductPrice" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="vCustomers"><EntityTypeMapping TypeName="EntityFrameworkDemosModel.vCustomer"><MappingFragment StoreEntitySet="vCustomers">
+            <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+            <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="vOrderLineItems"><EntityTypeMapping TypeName="EntityFrameworkDemosModel.vOrderLineItem"><MappingFragment StoreEntitySet="vOrderLineItems">
+            <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+            <ScalarProperty Name="OrderLineItemID" ColumnName="OrderLineItemID" />
+            <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+            <ScalarProperty Name="OrderQty" ColumnName="OrderQty" />
+            <ScalarProperty Name="OrderSalesPrice" ColumnName="OrderSalesPrice" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="vOrders"><EntityTypeMapping TypeName="EntityFrameworkDemosModel.vOrder"><MappingFragment StoreEntitySet="vOrders">
+            <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+            <ScalarProperty Name="CustomerId" ColumnName="CustomerId" />
+            <ScalarProperty Name="OrderDate" ColumnName="OrderDate" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="vProducts"><EntityTypeMapping TypeName="EntityFrameworkDemosModel.vProduct"><MappingFragment StoreEntitySet="vProducts">
+            <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+            <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+            <ScalarProperty Name="ProductPrice" ColumnName="ProductPrice" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="vRptOrdersByProducts"><EntityTypeMapping TypeName="EntityFrameworkDemosModel.vRptOrdersByProduct"><MappingFragment StoreEntitySet="vRptOrdersByProducts">
+            <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+            <ScalarProperty Name="OrderId" ColumnName="OrderId" />
+            <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+            <ScalarProperty Name="OrderDate" ColumnName="OrderDate" />
+            <ScalarProperty Name="OrderQty" ColumnName="OrderQty" />
+            <ScalarProperty Name="OrderSalesPrice" ColumnName="OrderSalesPrice" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="pDelCustomer" FunctionName="EntityFrameworkDemosModel.Store.pDelCustomer" />
+          <FunctionImportMapping FunctionImportName="pInsCustomer" FunctionName="EntityFrameworkDemosModel.Store.pInsCustomer" />
+          <FunctionImportMapping FunctionImportName="pUpdateCustomer" FunctionName="EntityFrameworkDemosModel.Store.pUpdateCustomer" />
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="DemoDataModel">
+        <EntityTypeShape EntityType="EntityFrameworkDemosModel.Customer" Width="1.5" PointX="1.125" PointY="1.75" Height="1.5956835937500002" IsExpanded="true" />
+        <EntityTypeShape EntityType="EntityFrameworkDemosModel.OrderLineItem" Width="1.5" PointX="5.25" PointY="1" Height="2.3648893229166656" IsExpanded="true" />
+        <EntityTypeShape EntityType="EntityFrameworkDemosModel.Order" Width="1.5" PointX="3.125" PointY="1.375" Height="1.9802864583333326" IsExpanded="true" />
+        <EntityTypeShape EntityType="EntityFrameworkDemosModel.Product" Width="1.5" PointX="7.25" PointY="1.625" Height="1.7879850260416657" IsExpanded="true" />
+        <EntityTypeShape EntityType="EntityFrameworkDemosModel.vCustomer" Width="1.5" PointX="1.125" PointY="3.75" Height="1.4033821614583317" IsExpanded="true" />
+        <EntityTypeShape EntityType="EntityFrameworkDemosModel.vOrderLineItem" Width="1.5" PointX="5.25" PointY="3.75" Height="1.9802864583333326" IsExpanded="true" />
+        <EntityTypeShape EntityType="EntityFrameworkDemosModel.vOrder" Width="1.5" PointX="3.125" PointY="3.75" Height="1.5956835937499996" IsExpanded="true" />
+        <EntityTypeShape EntityType="EntityFrameworkDemosModel.vProduct" Width="1.5" PointX="7.25" PointY="3.75" Height="1.5956835937499996" IsExpanded="true" />
+        <EntityTypeShape EntityType="EntityFrameworkDemosModel.vRptOrdersByProduct" Width="1.5" PointX="9.25" PointY="3.75" Height="2.1725878906249996" IsExpanded="true" />
+        <AssociationConnector Association="EntityFrameworkDemosModel.fkOrdersToCustomers" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.625" PointY="2.5478417968750002" />
+          <ConnectorPoint PointX="3.125" PointY="2.5478417968750002" />
+        </AssociationConnector>
+        <AssociationConnector Association="EntityFrameworkDemosModel.fkOrderLineItemsToOrders" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.625" PointY="2.3651432291666663" />
+          <ConnectorPoint PointX="5.25" PointY="2.3651432291666663" />
+        </AssociationConnector>
+        <AssociationConnector Association="EntityFrameworkDemosModel.fkOrderLineItemsToProducts" ManuallyRouted="false">
+          <ConnectorPoint PointX="7.25" PointY="2.4949446614583328" />
+          <ConnectorPoint PointX="6.75" PointY="2.4949446614583328" />
+        </AssociationConnector>
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>

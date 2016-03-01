@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="tempdb" Class="LinqToSQLDemoDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=(local);Initial Catalog=tempdb;Integrated Security=True" SettingsObjectName="WorkingWithLINQ.Properties.Settings" SettingsPropertyName="tempdbConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Customers" Member="CustomerEntities">
+    <Type Name="CustomerEntity">
+      <Column Name="ID" Type="System.Int32" DbType="Int" IsPrimaryKey="true" CanBeNull="true" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>
