@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace CSHP811A_Assignment_06
+namespace CustomerDbController
 {
     using System;
     using System.Data.Entity;

@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'C:\Users\usd33129\Documents\GitHub\CSharpClass\CSHP 811 Wi16\CSHP811A Assignment 06\CSHP811A Assignment 06\TempDBModel.edmx'. 
+﻿// T4 code generation is enabled for model 'C:\Users\usd33129\Documents\GitHub\CSharpClass\CSHP 811 Wi16\CSHP811A Assignment 06\CustomerDbController\ModelCustomerDB.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.

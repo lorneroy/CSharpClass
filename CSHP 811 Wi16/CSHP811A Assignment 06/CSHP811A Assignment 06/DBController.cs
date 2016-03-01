@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CustomerDbController;
+using System;
 using System.Data;
 using System.Data.SqlClient;
 using System.Text;
@@ -39,98 +40,42 @@ namespace CSHP811A_Assignment_06
 
         public void Insert(int CustomerID, string CustomerName)
         {
-            using (SqlConnection sqlConnection = new SqlConnection(_connectionString))
+
+            using (tempdbEntities tde = new tempdbEntities())
             {
-                sqlConnection.Open();
-                using (SqlCommand sqlCommand = new SqlCommand())
-                {
-
-                    sqlCommand.Connection = sqlConnection;
-
-                    //call stored procedure to insert record
-                    sqlCommand.CommandType = CommandType.StoredProcedure;
-                    sqlCommand.CommandText = "pInsCustomer";
-
-                    //add parameters to procedure
-                    sqlCommand.Parameters.Add(new SqlParameter("@CustomerID", CustomerID));
-                    sqlCommand.Parameters.Add(new SqlParameter("@CustomerName", CustomerName));
-
-                    sqlCommand.ExecuteNonQuery();
-
-                }
+                tde.pInsCustomer(CustomerID, CustomerName);
             }
         }
 
         public string Select()
         {
             StringBuilder retVal = new StringBuilder();
-            
-            using (SqlConnection sqlConnection = new SqlConnection(_connectionString))
+
+            using (tempdbEntities tde = new tempdbEntities())
             {
-                sqlConnection.Open();
-                using (SqlCommand sqlCommand = new SqlCommand())
+                var results = tde.pSelCustomer();
+                foreach (var item in results)
                 {
-
-                    sqlCommand.Connection = sqlConnection;
-
-                    //call stored procedure to insert record
-                    sqlCommand.CommandType = CommandType.StoredProcedure;
-                    sqlCommand.CommandText = "pSelCustomer";
-
-                    SqlDataReader sdr = sqlCommand.ExecuteReader();
-                    while (sdr.Read())
-                    {
-                        retVal.AppendLine(sdr["CustomerId"] + ", " + sdr["CustomerName"]);
-                    }
+                    retVal.AppendLine(item.CustomerId + ", " + item.CustomerName);
                 }
             }
+
             return retVal.ToString();
         }
 
         public void Update(int CustomerID, string NewCustomerName)
         {
-            using (SqlConnection sqlConnection = new SqlConnection(_connectionString))
+            using (tempdbEntities tde = new tempdbEntities())
             {
-                sqlConnection.Open();
-                using (SqlCommand sqlCommand = new SqlCommand())
-                {
-
-                    sqlCommand.Connection = sqlConnection;
-
-                    //call stored procedure to insert record
-                    sqlCommand.CommandType = CommandType.StoredProcedure;
-                    sqlCommand.CommandText = "pUpdCustomer";
-
-                    //add parameters to procedure
-                    sqlCommand.Parameters.Add(new SqlParameter("@CustomerID", CustomerID));
-                    sqlCommand.Parameters.Add(new SqlParameter("@NewCustomerName", NewCustomerName));
-
-                    sqlCommand.ExecuteNonQuery();
-
-                }
+                tde.pUpdCustomer(CustomerID, NewCustomerName);
             }
         }
 
         public void Delete(int CustomerID)
         {
-            using (SqlConnection sqlConnection = new SqlConnection(_connectionString))
+            using (tempdbEntities tde = new tempdbEntities())
             {
-                sqlConnection.Open();
-                using (SqlCommand sqlCommand = new SqlCommand())
-                {
-
-                    sqlCommand.Connection = sqlConnection;
-
-                    //call stored procedure to insert record
-                    sqlCommand.CommandType = CommandType.StoredProcedure;
-                    sqlCommand.CommandText = "pDelCustomer";
-
-                    //add parameters to procedure
-                    sqlCommand.Parameters.Add(new SqlParameter("@CustomerID", CustomerID));
-
-                    sqlCommand.ExecuteNonQuery();
-
-                }
+                tde.pDelCustomer(CustomerID);
             }
         }
 
