@@ -30,9 +30,8 @@ namespace CSHP811A_Assignment_06
 
         #region constructors
 
-        public CustomerDBController(string ConnectionString)
+        public CustomerDBController()
         {
-            this.ConnectionString = ConnectionString;
         }
         #endregion
 

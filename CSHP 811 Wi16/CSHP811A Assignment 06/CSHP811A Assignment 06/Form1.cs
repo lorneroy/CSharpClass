@@ -14,7 +14,6 @@ namespace CSHP811A_Assignment_06
     public partial class FormDBQuery : Form
     {
         #region fields
-        private ICustomerDBController _customerDBController;
 
         #endregion
 
@@ -23,16 +22,16 @@ namespace CSHP811A_Assignment_06
         {
             InitializeComponent();
 
-            string connectionString = System.Configuration.ConfigurationManager.ConnectionStrings["Assignment06"].ConnectionString;
-
-            _customerDBController = new CustomerDBController(connectionString);
         }
 
         private void buttonInsertCustomer_Click(object sender, EventArgs e)
         {
             try
             {
-                _customerDBController.Insert(Int32.Parse(textBoxInsertCustomerID.Text), textBoxInsertCustomerName.Text);
+                using (tempdbEntities tde = new tempdbEntities())
+                {
+                    tde.pInsCustomer(Int32.Parse(textBoxInsertCustomerID.Text), textBoxInsertCustomerName.Text);
+                }
                 textBoxInsertCustomerID.Clear();
                 textBoxInsertCustomerName.Clear();
             }
@@ -46,7 +45,8 @@ namespace CSHP811A_Assignment_06
         {
             try
             {
-                textBoxSelectedData.Text = _customerDBController.Select();
+                tempdbEntities tde = new tempdbEntities();
+                dataGridViewSelectedData.DataSource = tde.pSelCustomer().ToArray();
             }
             catch (Exception)
             {
@@ -58,7 +58,10 @@ namespace CSHP811A_Assignment_06
         {
             try
             {
-                _customerDBController.Delete(Int32.Parse(textBoxDeleteCustomerID.Text));
+                using (tempdbEntities tde = new tempdbEntities())
+                {
+                    tde.pDelCustomer(Int32.Parse(textBoxDeleteCustomerID.Text));
+                }
                 textBoxDeleteCustomerID.Clear();
             }
             catch (Exception)
@@ -71,7 +74,10 @@ namespace CSHP811A_Assignment_06
         {
             try
             {
-                _customerDBController.Update(Int32.Parse(textBoxUpdateCustomerID.Text), textBoxUpdateCustomerName.Text);
+                using (tempdbEntities tde = new tempdbEntities())
+                {
+                    tde.pUpdCustomer(Int32.Parse(textBoxUpdateCustomerID.Text), textBoxUpdateCustomerName.Text);
+                }
                 textBoxUpdateCustomerID.Clear();
                 textBoxUpdateCustomerName.Clear();
             }

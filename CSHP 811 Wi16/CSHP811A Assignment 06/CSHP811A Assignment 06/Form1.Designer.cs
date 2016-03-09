@@ -28,8 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.tabControlQueries = new System.Windows.Forms.TabControl();
             this.tabPageSelect = new System.Windows.Forms.TabPage();
+            this.dataGridViewSelectedData = new System.Windows.Forms.DataGridView();
+            this.customerIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.customerNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pSelCustomerResultBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.buttonSelect = new System.Windows.Forms.Button();
             this.tabPageInsert = new System.Windows.Forms.TabPage();
             this.textBoxInsertCustomerName = new System.Windows.Forms.TextBox();
             this.textBoxInsertCustomerID = new System.Windows.Forms.TextBox();
@@ -37,19 +43,19 @@
             this.labelCustomerName = new System.Windows.Forms.Label();
             this.labelCustomerID = new System.Windows.Forms.Label();
             this.tabPageUpdate = new System.Windows.Forms.TabPage();
-            this.tabPageDelete = new System.Windows.Forms.TabPage();
-            this.buttonSelect = new System.Windows.Forms.Button();
-            this.labelDeleteCustomerID = new System.Windows.Forms.Label();
-            this.buttonDelete = new System.Windows.Forms.Button();
-            this.textBoxDeleteCustomerID = new System.Windows.Forms.TextBox();
             this.textBoxUpdateCustomerName = new System.Windows.Forms.TextBox();
             this.textBoxUpdateCustomerID = new System.Windows.Forms.TextBox();
             this.buttonUpdate = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBoxSelectedData = new System.Windows.Forms.TextBox();
+            this.tabPageDelete = new System.Windows.Forms.TabPage();
+            this.textBoxDeleteCustomerID = new System.Windows.Forms.TextBox();
+            this.buttonDelete = new System.Windows.Forms.Button();
+            this.labelDeleteCustomerID = new System.Windows.Forms.Label();
             this.tabControlQueries.SuspendLayout();
             this.tabPageSelect.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSelectedData)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pSelCustomerResultBindingSource)).BeginInit();
             this.tabPageInsert.SuspendLayout();
             this.tabPageUpdate.SuspendLayout();
             this.tabPageDelete.SuspendLayout();
@@ -69,7 +75,7 @@
             // 
             // tabPageSelect
             // 
-            this.tabPageSelect.Controls.Add(this.textBoxSelectedData);
+            this.tabPageSelect.Controls.Add(this.dataGridViewSelectedData);
             this.tabPageSelect.Controls.Add(this.buttonSelect);
             this.tabPageSelect.Location = new System.Drawing.Point(4, 22);
             this.tabPageSelect.Name = "tabPageSelect";
@@ -78,6 +84,50 @@
             this.tabPageSelect.TabIndex = 0;
             this.tabPageSelect.Text = "Select";
             this.tabPageSelect.UseVisualStyleBackColor = true;
+            // 
+            // dataGridViewSelectedData
+            // 
+            this.dataGridViewSelectedData.AllowUserToAddRows = false;
+            this.dataGridViewSelectedData.AllowUserToDeleteRows = false;
+            this.dataGridViewSelectedData.AutoGenerateColumns = false;
+            this.dataGridViewSelectedData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewSelectedData.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.customerIdDataGridViewTextBoxColumn,
+            this.customerNameDataGridViewTextBoxColumn});
+            this.dataGridViewSelectedData.DataSource = this.pSelCustomerResultBindingSource;
+            this.dataGridViewSelectedData.Location = new System.Drawing.Point(7, 37);
+            this.dataGridViewSelectedData.Name = "dataGridViewSelectedData";
+            this.dataGridViewSelectedData.ReadOnly = true;
+            this.dataGridViewSelectedData.Size = new System.Drawing.Size(240, 150);
+            this.dataGridViewSelectedData.TabIndex = 1;
+            // 
+            // customerIdDataGridViewTextBoxColumn
+            // 
+            this.customerIdDataGridViewTextBoxColumn.DataPropertyName = "CustomerId";
+            this.customerIdDataGridViewTextBoxColumn.HeaderText = "CustomerId";
+            this.customerIdDataGridViewTextBoxColumn.Name = "customerIdDataGridViewTextBoxColumn";
+            this.customerIdDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // customerNameDataGridViewTextBoxColumn
+            // 
+            this.customerNameDataGridViewTextBoxColumn.DataPropertyName = "CustomerName";
+            this.customerNameDataGridViewTextBoxColumn.HeaderText = "CustomerName";
+            this.customerNameDataGridViewTextBoxColumn.Name = "customerNameDataGridViewTextBoxColumn";
+            this.customerNameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // pSelCustomerResultBindingSource
+            // 
+            this.pSelCustomerResultBindingSource.DataSource = typeof(CustomerDbController.pSelCustomer_Result);
+            // 
+            // buttonSelect
+            // 
+            this.buttonSelect.Location = new System.Drawing.Point(7, 7);
+            this.buttonSelect.Name = "buttonSelect";
+            this.buttonSelect.Size = new System.Drawing.Size(75, 23);
+            this.buttonSelect.TabIndex = 0;
+            this.buttonSelect.Text = "Select";
+            this.buttonSelect.UseVisualStyleBackColor = true;
+            this.buttonSelect.Click += new System.EventHandler(this.buttonSelect_Click);
             // 
             // tabPageInsert
             // 
@@ -94,17 +144,17 @@
             this.tabPageInsert.Text = "Insert";
             this.tabPageInsert.UseVisualStyleBackColor = true;
             // 
-            // textBoxCustomerName
+            // textBoxInsertCustomerName
             // 
             this.textBoxInsertCustomerName.Location = new System.Drawing.Point(92, 41);
-            this.textBoxInsertCustomerName.Name = "textBoxCustomerName";
+            this.textBoxInsertCustomerName.Name = "textBoxInsertCustomerName";
             this.textBoxInsertCustomerName.Size = new System.Drawing.Size(100, 20);
             this.textBoxInsertCustomerName.TabIndex = 4;
             // 
-            // textBoxCustomerID
+            // textBoxInsertCustomerID
             // 
             this.textBoxInsertCustomerID.Location = new System.Drawing.Point(92, 15);
-            this.textBoxInsertCustomerID.Name = "textBoxCustomerID";
+            this.textBoxInsertCustomerID.Name = "textBoxInsertCustomerID";
             this.textBoxInsertCustomerID.Size = new System.Drawing.Size(100, 20);
             this.textBoxInsertCustomerID.TabIndex = 3;
             // 
@@ -151,55 +201,6 @@
             this.tabPageUpdate.Text = "Update";
             this.tabPageUpdate.UseVisualStyleBackColor = true;
             // 
-            // tabPageDelete
-            // 
-            this.tabPageDelete.Controls.Add(this.textBoxDeleteCustomerID);
-            this.tabPageDelete.Controls.Add(this.buttonDelete);
-            this.tabPageDelete.Controls.Add(this.labelDeleteCustomerID);
-            this.tabPageDelete.Location = new System.Drawing.Point(4, 22);
-            this.tabPageDelete.Name = "tabPageDelete";
-            this.tabPageDelete.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageDelete.Size = new System.Drawing.Size(251, 211);
-            this.tabPageDelete.TabIndex = 3;
-            this.tabPageDelete.Text = "Delete";
-            this.tabPageDelete.UseVisualStyleBackColor = true;
-            // 
-            // buttonSelect
-            // 
-            this.buttonSelect.Location = new System.Drawing.Point(7, 7);
-            this.buttonSelect.Name = "buttonSelect";
-            this.buttonSelect.Size = new System.Drawing.Size(75, 23);
-            this.buttonSelect.TabIndex = 0;
-            this.buttonSelect.Text = "Select";
-            this.buttonSelect.UseVisualStyleBackColor = true;
-            this.buttonSelect.Click += new System.EventHandler(this.buttonSelect_Click);
-            // 
-            // labelDeleteCustomerID
-            // 
-            this.labelDeleteCustomerID.AutoSize = true;
-            this.labelDeleteCustomerID.Location = new System.Drawing.Point(7, 9);
-            this.labelDeleteCustomerID.Name = "labelDeleteCustomerID";
-            this.labelDeleteCustomerID.Size = new System.Drawing.Size(65, 13);
-            this.labelDeleteCustomerID.TabIndex = 0;
-            this.labelDeleteCustomerID.Text = "Customer ID";
-            // 
-            // buttonDelete
-            // 
-            this.buttonDelete.Location = new System.Drawing.Point(10, 38);
-            this.buttonDelete.Name = "buttonDelete";
-            this.buttonDelete.Size = new System.Drawing.Size(75, 23);
-            this.buttonDelete.TabIndex = 1;
-            this.buttonDelete.Text = "Delete";
-            this.buttonDelete.UseVisualStyleBackColor = true;
-            this.buttonDelete.Click += new System.EventHandler(this.buttonDelete_Click);
-            // 
-            // textBoxDeleteCustomerID
-            // 
-            this.textBoxDeleteCustomerID.Location = new System.Drawing.Point(78, 6);
-            this.textBoxDeleteCustomerID.Name = "textBoxDeleteCustomerID";
-            this.textBoxDeleteCustomerID.Size = new System.Drawing.Size(100, 20);
-            this.textBoxDeleteCustomerID.TabIndex = 2;
-            // 
             // textBoxUpdateCustomerName
             // 
             this.textBoxUpdateCustomerName.Location = new System.Drawing.Point(119, 41);
@@ -242,14 +243,44 @@
             this.label2.TabIndex = 5;
             this.label2.Text = "Customer ID";
             // 
-            // textBoxSelectedData
+            // tabPageDelete
             // 
-            this.textBoxSelectedData.Location = new System.Drawing.Point(7, 37);
-            this.textBoxSelectedData.Multiline = true;
-            this.textBoxSelectedData.Name = "textBoxSelectedData";
-            this.textBoxSelectedData.ReadOnly = true;
-            this.textBoxSelectedData.Size = new System.Drawing.Size(238, 168);
-            this.textBoxSelectedData.TabIndex = 1;
+            this.tabPageDelete.Controls.Add(this.textBoxDeleteCustomerID);
+            this.tabPageDelete.Controls.Add(this.buttonDelete);
+            this.tabPageDelete.Controls.Add(this.labelDeleteCustomerID);
+            this.tabPageDelete.Location = new System.Drawing.Point(4, 22);
+            this.tabPageDelete.Name = "tabPageDelete";
+            this.tabPageDelete.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPageDelete.Size = new System.Drawing.Size(251, 211);
+            this.tabPageDelete.TabIndex = 3;
+            this.tabPageDelete.Text = "Delete";
+            this.tabPageDelete.UseVisualStyleBackColor = true;
+            // 
+            // textBoxDeleteCustomerID
+            // 
+            this.textBoxDeleteCustomerID.Location = new System.Drawing.Point(78, 6);
+            this.textBoxDeleteCustomerID.Name = "textBoxDeleteCustomerID";
+            this.textBoxDeleteCustomerID.Size = new System.Drawing.Size(100, 20);
+            this.textBoxDeleteCustomerID.TabIndex = 2;
+            // 
+            // buttonDelete
+            // 
+            this.buttonDelete.Location = new System.Drawing.Point(10, 38);
+            this.buttonDelete.Name = "buttonDelete";
+            this.buttonDelete.Size = new System.Drawing.Size(75, 23);
+            this.buttonDelete.TabIndex = 1;
+            this.buttonDelete.Text = "Delete";
+            this.buttonDelete.UseVisualStyleBackColor = true;
+            this.buttonDelete.Click += new System.EventHandler(this.buttonDelete_Click);
+            // 
+            // labelDeleteCustomerID
+            // 
+            this.labelDeleteCustomerID.AutoSize = true;
+            this.labelDeleteCustomerID.Location = new System.Drawing.Point(7, 9);
+            this.labelDeleteCustomerID.Name = "labelDeleteCustomerID";
+            this.labelDeleteCustomerID.Size = new System.Drawing.Size(65, 13);
+            this.labelDeleteCustomerID.TabIndex = 0;
+            this.labelDeleteCustomerID.Text = "Customer ID";
             // 
             // FormDBQuery
             // 
@@ -261,7 +292,8 @@
             this.Text = "Database Query";
             this.tabControlQueries.ResumeLayout(false);
             this.tabPageSelect.ResumeLayout(false);
-            this.tabPageSelect.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSelectedData)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pSelCustomerResultBindingSource)).EndInit();
             this.tabPageInsert.ResumeLayout(false);
             this.tabPageInsert.PerformLayout();
             this.tabPageUpdate.ResumeLayout(false);
@@ -288,12 +320,15 @@
         private System.Windows.Forms.TextBox textBoxDeleteCustomerID;
         private System.Windows.Forms.Button buttonDelete;
         private System.Windows.Forms.Label labelDeleteCustomerID;
-        private System.Windows.Forms.TextBox textBoxSelectedData;
         private System.Windows.Forms.TextBox textBoxUpdateCustomerName;
         private System.Windows.Forms.TextBox textBoxUpdateCustomerID;
         private System.Windows.Forms.Button buttonUpdate;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.DataGridView dataGridViewSelectedData;
+        private System.Windows.Forms.DataGridViewTextBoxColumn customerIdDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn customerNameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource pSelCustomerResultBindingSource;
     }
 }
 
