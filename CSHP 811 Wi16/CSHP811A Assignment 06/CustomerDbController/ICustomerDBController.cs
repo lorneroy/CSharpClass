@@ -6,6 +6,7 @@ namespace CustomerDbController
 {
     interface ICustomerDBController
     {
+        int EmployeeID;
 
         tempdbEntities Select();
 
