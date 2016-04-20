@@ -1,0 +1,44 @@
+﻿@{
+    Layout = null;
+}
+@{
+    if (IsPost)
+    {
+        
+        string firstName = Request.Form["firstname"];
+        string lastName = Request.Form["lastname"];
+
+        <text>
+            You entered: <br />
+            First Name: @firstName <br />
+            Last Name: @lastName <br />
+
+            <br/>
+        </text>
+    }
+    }
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+</head>
+<body>
+    <script src="JavaScript.js"></script>
+    <div>
+
+        <form method="post" name="NameEntry" onsubmit="return validateInputs()">
+            First name:<br>
+            <input type="text" id="firstName" name="firstname">
+            <br>
+            Last name:<br>
+            <input type="text" id="lastName" name="lastname">
+            <br />
+            <br />
+            <input type="submit" value="Submit">
+            <p id="nameValidationMessage" />
+        </form>
+    </div>
+</body>
+</html>

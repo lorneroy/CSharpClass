@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Main Page</title>
+    <script type="text/javascript">
+        function readText(objForm) {
+            strTestVar = objForm.txtUserName.value;
+            alert("You typed: " + strTestVar);
+        }
+        function add(objForm) {
+            intOne = parseInt(objForm.number1.value);
+            intTwo = parseInt(objForm.number2.value);
+            sum = intOne + intTwo;
+            alert("The sum is: " + sum.toString());
+        }
+    </script>
+
+
+</head>
+<body>
+    <h1>This is a Test Form</h1>
+    <p>The input tag provides a number of browser controls allowing a page to be interactive</p>
+
+    <form>
+        <!-- These are both the default values!-->
+        <input type="text" name="number1" />&nbsp; Enter first number<br />
+        <input type="text" name="number2" />&nbsp; Enter second number<br />
+        <input type="button" value="Submit" onclick="add(this.form)" />
+    </form>
+
+</body>
+</html>
